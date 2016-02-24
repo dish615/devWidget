@@ -67,6 +67,7 @@ function main() {
         var jsonp_url= "https://cdn.rawgit.com/dish615/widgetExternalFinal/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
+            console.log(typeof data);
             //"input[type=‘submit’][name=‘add’]”
             if($("input[type=‘submit’][name=‘add’]").length>0) {
                $("input[type=‘submit’][name=‘add’]").after(data);
