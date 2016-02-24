@@ -9,7 +9,7 @@ if (window.jQuery === undefined || window.jQuery.fn.jquery !== '1.11.3') {
     var script_tag = document.createElement('script');
     script_tag.setAttribute("type","text/javascript");
     script_tag.setAttribute("src",
-        "http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js");
+        "https://code.jquery.com/jquery-1.11.3.min.js");
     if (script_tag.readyState) {
       script_tag.onreadystatechange = function () { // For old versions of IE
           if (this.readyState == 'complete' || this.readyState == 'loaded') {
