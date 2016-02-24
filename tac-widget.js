@@ -42,7 +42,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://raw.githubusercontent.com/dish615/widgetExternal/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/widgetExternal/master/style.css" 
 
         });
         
@@ -56,7 +56,7 @@ function main() {
         
         google_fonts.appendTo("head");
         
-        var jsonp_url= "https://raw.githubusercontent.com/dish615/widgetExternal/master/index.html?callback=?";
+        var jsonp_url= "https://cdn.rawgit.com.com/dish615/widgetExternal/master/index.html?callback=?";
         $.getJSON(jsonp_url, function(data){
             //"input[type=‘submit’][name=‘add’]”
             if($("input[type=‘submit’][name=‘add’]").length) {
