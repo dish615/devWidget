@@ -42,7 +42,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/widgetExternalFin/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/widgetExternalFinal/master/style.css" 
 
         });
        
@@ -59,12 +59,12 @@ function main() {
         var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/widgetExternalFin/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/widgetExternalFinal/master/check.js"
         });
         
         widg_script.appendTo("head");
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/widgetExternalFin/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/widgetExternalFinal/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             //"input[type=‘submit’][name=‘add’]”
