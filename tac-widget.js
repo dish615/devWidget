@@ -51,10 +51,17 @@ function main() {
         var google_fonts= $("<link>",{
             rel: "stylesheet",
             type: 'text/css',
-            href: "https://fonts.googleapis.com/css?family=Raleway:400,500"
+            href: "https://code.jquery.com/jquery-1.11.3.min.js"
         });
         
         google_fonts.appendTo("head");
+        
+        var widg_script = $("<script>", {
+           type: "text/javascript",
+            src: "https://cdn.rawgit.com/dish615/widgetExternal/master/check.js"
+        });
+        
+        widg_script.appendTo("head");
         
         var jsonp_url= "https://cdn.rawgit.com.com/dish615/widgetExternal/master/index.html?callback=?";
         $.getJSON(jsonp_url, function(data){

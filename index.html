@@ -1,30 +1,11 @@
 
 <div id="tacboard">
-    
 
-    
-    <form action="/input-price" onkeypress="return event.keyCode != 13;" name="tb"  id="tacboard-form">
+    <form action="/input-price" name="tb"  id="tacboard-form">
        
-    <span>$ </span><input id="tac-input" name="price" placeholder="PRICE I'D PAY"><button onclick="checker();" type="button"  id="tacit">Ping Me</button>
+    <span>$ </span><input id="tac-input" name="price" placeholder="PRICE I'D PAY"><button type="button"  id="tacit">Ping Me</button>
     </form>
-    <script type="text/javascript">
-        
-        function checker() {
 
-            var x= document.forms["tb"]["price"].value;
-            console.log(x);
-            if((!isNaN(x)) && (x!=="")) {
-                console.log("good");
-                var imp= document.getElementById("tacit");
-                imp.setAttribute("type", "submit");
-                imp.click();
-                window.open('http://localhost:3000/signup-pop?price='+x, 'newwindow', 'width=600, height=450'); 
-                imp.setAttribute("type", "button");
-                //document.location.replace("/");
-                return false;
-            } 
-        }
-      </script>
 
 
 </div>
