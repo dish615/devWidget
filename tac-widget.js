@@ -45,13 +45,13 @@ function main() {
             href: "https://cdn.rawgit.com/dish615/widgetExternalFin/master/style.css" 
 
         });
-        
+       
         css_link.appendTo("head");
         
         var google_fonts= $("<link>",{
             rel: "stylesheet",
             type: 'text/css',
-            href: "https://code.jquery.com/jquery-1.11.3.min.js"
+            href: "https://fonts.googleapis.com/css?family=Raleway:400,500"
         });
         
         google_fonts.appendTo("head");
@@ -64,14 +64,14 @@ function main() {
         
         widg_script.appendTo("head");
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/widgetExternalFin/master/index.html?callback=?";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/widgetExternalFin/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             //"input[type=‘submit’][name=‘add’]”
             if($("input[type=‘submit’][name=‘add’]").length>0) {
-               $("input[type=‘submit’][name=‘add’]").after(data.html);
+               $("input[type=‘submit’][name=‘add’]").after(data);
             } else if($("button[type=‘submit’][name=‘add’]").length>0) {
-               $("button[type=‘submit’][name=‘add’]").after(data.html);
+               $("button[type=‘submit’][name=‘add’]").after(data);
             }
            
         });
