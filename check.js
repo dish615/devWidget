@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    
+var important= document.getElementById("tac-input");
+important.setAttribute('size', important.getAttribute('placeholder').length);
+    
     $("#tacboard-form").keypress(function(){
         return event.keyCode != 13;
     });
@@ -20,9 +24,5 @@ $(document).ready(function(){
     });
     
 
-    
-    
-    
-    
-    
 });
+
