@@ -1,6 +1,6 @@
   #tac-input {
     background-color: #fff;
-    font-size: 1em;
+    font-size: 1.15em;
     vertical-align: middle;
     border-radius: 0.4em;
     padding: 0.4em;
@@ -17,7 +17,7 @@
 
     #tacit {
     font-weight: 500;
-    font-size: 1em;
+    font-size: 1.15em;
     border-radius: 0.4em;
     padding: 0.47em;
         
@@ -40,12 +40,13 @@
 #tacboard {
     display: inline-block;
     margin-left: 5px;
+    vertical-align: bottom;
 }
 
 #tacboard-form span {
     font-family: "Raleway", sans-serif;
         font-weight: 500;
-        font-size: 1.2em;
+        font-size: 1.4em;
     color: #a9a9a9;
     vertical-align: middle;
 }
