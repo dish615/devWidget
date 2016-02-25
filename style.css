@@ -16,10 +16,16 @@
     button:focus {outline:0;}
 
     #tacit {
+    /*
     font-weight: 500;
     font-size: 1.15em;
+        
+        0.47em
+        */
     border-radius: 0.4em;
-    padding: 0.47em;
+    padding: 0.2em;
+    padding-left: 0.47em;
+    padding-right: 0.47em;
         
     font-family: "Raleway", sans-serif;
     background-color: #8be3ef;
@@ -42,6 +48,11 @@
    
     vertical-align: bottom;
     
+}
+
+#tac {
+    width: 70px;
+    vertical-align: middle;
 }
 
 .tacboard-form span {
