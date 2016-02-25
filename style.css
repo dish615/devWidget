@@ -32,7 +32,7 @@
     cursor: pointer;
     }
     
-    #tacboard-form {
+    .tacboard-form {
         display: inline;
         
     }
@@ -43,16 +43,18 @@
     vertical-align: bottom;
 }
 
-#tacboard-form span {
+.tacboard-form span {
     font-family: "Raleway", sans-serif;
         font-weight: 500;
         font-size: 1.4em;
     color: #a9a9a9;
     vertical-align: middle;
+    margin: 0px;
 }
 
 #or {
     font-size: 0.8em;
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
 }

@@ -15,7 +15,7 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
     console.log("tacb:"+tacb);
           $("#cartAndTb").width(btn+tacb+60);
     
-    $("#tacboard-form").keypress(function(){
+    $(".tacboard-form").keypress(function(){
         return event.keyCode != 13;
     });
     
