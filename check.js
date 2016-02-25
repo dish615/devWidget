@@ -32,7 +32,7 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
           
                   var tacb= $("#tacboard").length;
           console.log(btn+tacb);
-                  $("#cartAndTb").attr("size", btn+tacb);
+                  $(".cartAndTb").attr("size", btn+tacb);
     
 
 });
