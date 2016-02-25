@@ -11,6 +11,8 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
       }
           var tacb= $("#tacboard").width();
         console.log(btn+tacb);
+    console.log("btn:"+btn);
+    console.log("tacb:"+tacb);
           $("#cartAndTb").width(btn+tacb);
     
     $("#tacboard-form").keypress(function(){
