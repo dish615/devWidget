@@ -24,15 +24,15 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
     });
     
       var btn;
-              if($("input[type='submit'][name='add']").length>0) {
-                  var btn= $("input[type='submit'][name='add']").length;
-              } else if($("button[type='submit'][name='add']").length>0) {
-                 var btn= $("button[type='submit'][name='add']").length; 
-              }
-          
-                  var tacb= $("#tacboard").length;
-          console.log(btn+tacb);
-                  $(".cartAndTb").attr("size", btn+tacb);
+      if($("input[type='submit'][name='add']").length>0) {
+          var btn= $("input[type='submit'][name='add']").length;
+      } else if($("button[type='submit'][name='add']").length>0) {
+         var btn= $("button[type='submit'][name='add']").length; 
+      }
+
+          var tacb= $("#tacboard").length;
+  console.log(btn+tacb);
+          $("#cartAndTb").attr("size", btn+tacb);
     
 
 });
