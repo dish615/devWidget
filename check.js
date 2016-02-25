@@ -15,8 +15,7 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
     console.log("tacb:"+tacb);
           $("#cartAndTb").width(btn+tacb+110);
     
-    $("#invisible").val(window.location.href);
-    console.log($("#invisible").val());
+   
     
     $(".tacboard-form").keypress(function(){
         return event.keyCode != 13;
@@ -29,6 +28,8 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
                 console.log("good");
                 var imp= document.getElementById("tacit");
                 imp.setAttribute("type", "submit");
+                 $("#invisible").val(window.location.href);
+                    console.log($("#invisible").val());
                 imp.click();
                 window.open('http://localhost:3000/signup-pop?price='+x, 'newwindow', 'width=600, height=450'); 
                 imp.setAttribute("type", "button");
