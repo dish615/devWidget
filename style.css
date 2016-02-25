@@ -39,7 +39,7 @@
 
 #tacboard {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 15px;
     vertical-align: bottom;
 }
 
@@ -49,4 +49,10 @@
         font-size: 1.4em;
     color: #a9a9a9;
     vertical-align: middle;
+}
+
+#or {
+    font-size: 0.8em;
+    display: inline-block;
+    margin-right: 15px;
 }
