@@ -82,10 +82,12 @@ function main() {
         var newDiv= $("<div/>").addClass("cartAndTb");
         if(isBtn) {
             $("button[type='submit'][name='add']").before(newDiv);
-            var next= $("button[type='submit'][name='add']").next();        newDiv.append("button[type='submit'][name='add']").append(next);
+            var next= $("button[type='submit'][name='add']").next();        
+            newDiv.append("button[type='submit'][name='add']").append(next);
         } else {
             $("input[type='submit'][name='add']").before(newDiv);
-            var next= $("input[type='submit'][name='add']").next();        newDiv.append("input[type='submit'][name='add']").append(next);
+            var next= $("input[type='submit'][name='add']").next();        
+            newDiv.append("input[type='submit'][name='add']").append(next);
         }
         
            var widg_script = $("<script>", {
