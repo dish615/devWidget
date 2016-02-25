@@ -41,20 +41,24 @@
     display: inline-block;
    
     vertical-align: bottom;
+    margin-left: 20px;
 }
 
 .tacboard-form span {
     font-family: "Raleway", sans-serif;
-        font-weight: 500;
-        font-size: 1.4em;
+        font-weight: 400;
+        font-size: 1.3em;
     color: #a9a9a9;
     vertical-align: middle;
     margin: 0px;
 }
 
+/*
+
 #or {
     font-size: 0.8em;
     display: inline-block;
     margin-right: 10px;
-    margin-left: 10px;
+    margin-left: 15px;
 }
+*/
