@@ -5,11 +5,11 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
     
           var btn;
       if($("input[type='submit'][name='add']").length>0) {
-          var btn= $("input[type='submit'][name='add']").width();
+          var btn= $("input[type='submit'][name='add']").outerWidth();
       } else if($("button[type='submit'][name='add']").length>0) {
-         var btn= $("button[type='submit'][name='add']").width(); 
+         var btn= $("button[type='submit'][name='add']").outerWidth(); 
       }
-          var tacb= $("#tacboard").width();
+          var tacb= $("#tacboard").outerWidth();
         console.log(btn+tacb);
     console.log("btn:"+btn);
     console.log("tacb:"+tacb);
