@@ -22,7 +22,8 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
     });
     
     $("#tacit").click(function(){
-      var x= document.forms["tb"]["price"].value;
+      var x= $("#tac-input").val()+"";
+        x= parseInt(x.substring(1));
             console.log(x);
             if((!isNaN(x)) && (x!=="")) {
                 console.log("good");
@@ -52,8 +53,10 @@ var readOnlyLength = 2;
  });
  
  $("#tac-input").blur(function(){
- $(this).val("");
- $(this).attr("placeholder", "$ PRICE I'D PAY");
+     if($(this).val()==="$ ") {
+         $(this).val("");
+        $(this).attr("placeholder", "$ PRICE I'D PAY");
+     }
  
  });
  
