@@ -68,3 +68,27 @@
 }
 
 
+
+#redirbtn {
+     display: inline-block;
+     
+}
+
+#tacked {
+    
+    font-size: 1.15em;
+    border-radius: 0.4em;
+    padding: 0.33em;
+    padding-left: 0.57em;
+    padding-right: 0.57em;
+        
+    font-family: "Raleway", sans-serif;
+    background-color: #8be3ef;
+    border: none;
+    vertical-align: top;
+    text-align: center;
+
+    margin-left: 5px;
+    color: #fff;
+    cursor: pointer;
+}
