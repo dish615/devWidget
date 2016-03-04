@@ -58,6 +58,8 @@ $(document).ready(function(){
     } else {
         $("#cartAndTb").width(377+377);  
     }
+    
+    $("#urlTest").text(window.location.href);
           
           
     
