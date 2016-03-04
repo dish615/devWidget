@@ -1,5 +1,6 @@
 $(document).ready(function(){
     //dont think this is working...
+    /*
     if(tbCookieExists()) {
         var dc= document.cookie;
         var temp= dc.split("=");
@@ -11,7 +12,7 @@ $(document).ready(function(){
             }
         }
         var arr= JSON.parse(temp[val]);
-        var loc= window.location.href;
+        var loc= top.location.href;
         for(var i=2; i< arr.length; i++) {
             if(arr[i].url===loc) {
                 $(".tacboard-form").css("display", "none");
@@ -31,17 +32,18 @@ $(document).ready(function(){
             }
         }
         var obj= JSON.parse(temp[val]);
-        if(obj.url===window.location.href) {
+        if(obj.url=== top.location.href) {
             $(".tacboard-form").css("display", "none");
                 var html= '<div id="redirbtn"><a href="https://thetacboard.com" target="_blank"><button id="tacked" type="button">Tacked at $'+obj.tackedPrice+'</button></a></div>';
              $("#tacboard").prepend(html);
         }
         
     }
+    */
     //
     
-var important= document.getElementById("tac-input");
-important.setAttribute('size', important.getAttribute('placeholder').length);
+//var important= document.getElementById("tac-input");
+//important.setAttribute('size', important.getAttribute('placeholder').length);
     
     
           var btn;
@@ -50,16 +52,19 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
       } else if($("button[type='submit'][name='add']").length>0) {
          var btn= $("button[type='submit'][name='add']").outerWidth(); 
       }
-          var tacb= $("#plzwork").outerWidth();
-        console.log(btn+tacb);
-    console.log("btn:"+btn);
-    console.log("tacb:"+tacb);
-          $("#cartAndTb").width(btn+tacb+110);
+    console.log(btn);
+    if(btn) {
+      $("#cartAndTb").width(btn+377);  
+    } else {
+        $("#cartAndTb").width(377+377);  
+    }
+          
+          
     
     
     
 
-   
+   /*
     
     $(".tacboard-form").keypress(function(event){
         return event.keyCode != 13;
@@ -104,6 +109,7 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
           }
 
     });
+    */
     /*
   function runner() {
       var counter= 1;
@@ -128,7 +134,7 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
   } 
   */
     
-  
+  /*
     function tbCookieExists() {
         var dc= document.cookie;
         console.log(dc);
@@ -155,7 +161,7 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
         }
     }
 
-/*keep $ symbol present!*/
+keep $ symbol present!
     
 var readOnlyLength = 2;
 
@@ -234,7 +240,7 @@ $('#tac-input').on('keypress, keydown', function(event) {
     
     
 
-    
+  */  
 
 });
 
