@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    //dont think this is working...
     if(tbCookieExists()) {
         var dc= document.cookie;
         var temp= dc.split("=");
@@ -38,6 +38,7 @@ $(document).ready(function(){
         }
         
     }
+    //
     
 var important= document.getElementById("tac-input");
 important.setAttribute('size', important.getAttribute('placeholder').length);
@@ -97,13 +98,13 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
                 window.open('http://localhost:3000/signup-pop?price='+x+'&url='+encodeURIComponent(y), 'newwindow', 'width=600, height=450'); 
                 //imp.setAttribute("type", "button");
                 //document.location.replace("/");
-                runner();
+                
                 return false;
             }
           }
 
     });
-    
+    /*
   function runner() {
       var counter= 1;
       var hope= setInterval(function(){
@@ -125,6 +126,7 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
       }, 100);  
       
   } 
+  */
     
   
     function tbCookieExists() {
