@@ -4,8 +4,13 @@ $(document).ready(function(){
         var dc= document.cookie;
         var temp= dc.split("=");
         console.log(temp);
-        
-        var arr= JSON.parse(temp[1]);
+        var val;
+        for(var i=0; i<temp.length; i++) {
+            if(temp[i]=== "tacboard") {
+                val= i+1;
+            }
+        }
+        var arr= JSON.parse(temp[val]);
         var loc= window.location.href;
         for(var i=2; i< arr.length; i++) {
             if(arr[i].url===loc) {
@@ -19,8 +24,13 @@ $(document).ready(function(){
          var dc= document.cookie;
         var temp= dc.split("=");
         console.log(temp);
-        
-        var obj= JSON.parse(temp[1]);
+        var val;
+        for(var i=0; i<temp.length; i++) {
+            if(temp[i]=== "incompleteTb") {
+                val= i+1;
+            }
+        }
+        var obj= JSON.parse(temp[val]);
         if(obj.url===window.location.href) {
             $(".tacboard-form").css("display", "none");
                 var html= '<div id="redirbtn"><a href="https://thetacboard.com" target="_blank"><button id="tacked" type="button">Tacked at $'+obj.tackedPrice+'</button></a></div>';
@@ -99,11 +109,13 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
       var hope= setInterval(function(){
           var dc= document.cookie;
           var temp= dc.split("=");
-          
-          if(temp==="tacboard" || temp==="incompleteTb") {
-              clearInterval(hope);
-              window.location.reload();
+          for(var i=0; i<temp.length; i++) {
+              if(temp[i]==="tacboard" || temp[i]==="incompleteTb") {
+                  window.location.reload();
+                  break;
+              }
           }
+
           counter++;
          
           
