@@ -50,7 +50,7 @@ important.setAttribute('size', important.getAttribute('placeholder').length);
       } else if($("button[type='submit'][name='add']").length>0) {
          var btn= $("button[type='submit'][name='add']").outerWidth(); 
       }
-          var tacb= $("#tacboard").outerWidth();
+          var tacb= $("#plzwork").outerWidth();
         console.log(btn+tacb);
     console.log("btn:"+btn);
     console.log("tacb:"+tacb);
