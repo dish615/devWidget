@@ -58,10 +58,7 @@ $(document).ready(function(){
     } else {
         $("#cartAndTb").width(377+377);  
     }
-    var y= encodeURI(window.location.href);
-    console.log(y);
     
-    $.get("http://localhost:3000/cookie-inst?currentUrl="+y);
     
    // $("#urlTest").text(window.location.href);
           
