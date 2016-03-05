@@ -60,13 +60,12 @@ $(document).ready(function(){
     
           var btn;
       if($("input[type='submit'][name='add']").length>0) {
-          var y= encodeURI(window.location.href);
-          $.get("http://localhost:3000/current-url?currentUrl="+y);
+          
           var btn= $("input[type='submit'][name='add']").outerWidth();
           
       } else if($("button[type='submit'][name='add']").length>0) {
-          var y= encodeURI(window.location.href);
-          $.get("http://localhost:3000/current-url?currentUrl="+y);
+          //var y= encodeURI(window.location.href);
+          //$.get("http://localhost:3000/current-url?currentUrl="+y);
          var btn= $("button[type='submit'][name='add']").outerWidth(); 
           
       }
