@@ -1,6 +1,6 @@
 $(document).ready(function(){
     //dont think this is working...
-    /*
+   
     if(tbCookieExists()) {
         var dc= document.cookie;
         var temp= dc.split("=");
@@ -11,11 +11,14 @@ $(document).ready(function(){
                 val= i+1;
             }
         }
-        var arr= JSON.parse(temp[val]);
+        var str= decodeURIComponent(temp[val]);
+        console.log(str);
+        var arr= JSON.parse(str);
+        console.log(arr);
         var loc= top.location.href;
         for(var i=2; i< arr.length; i++) {
             if(arr[i].url===loc) {
-                $(".tacboard-form").css("display", "none");
+                $("#plzwork").css("display", "none");
                 var html= '<div id="redirbtn"><a href="https://thetacboard.com" target="_blank"><button id="tacked" type="button">Tacked at $'+arr[i].tackedPrice+'</button></a></div>';
                 $("#tacboard").prepend(html);
                 
@@ -31,15 +34,19 @@ $(document).ready(function(){
                 val= i+1;
             }
         }
-        var obj= JSON.parse(temp[val]);
+        var str= decodeURIComponent(temp[val]);
+        console.log(str);
+        var obj= JSON.parse(str);
+        console.log(obj);
+        
         if(obj.url=== top.location.href) {
-            $(".tacboard-form").css("display", "none");
+            $("#plzwork").css("display", "none");
                 var html= '<div id="redirbtn"><a href="https://thetacboard.com" target="_blank"><button id="tacked" type="button">Tacked at $'+obj.tackedPrice+'</button></a></div>';
              $("#tacboard").prepend(html);
         }
         
     }
-    */
+   
     //
     
 //var important= document.getElementById("tac-input");
@@ -141,7 +148,7 @@ $(document).ready(function(){
   } 
   */
     
-  /*
+ 
     function tbCookieExists() {
         var dc= document.cookie;
         console.log(dc);
@@ -167,6 +174,7 @@ $(document).ready(function(){
             return true;
         }
     }
+     /*
 
 keep $ symbol present!
     
