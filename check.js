@@ -1,6 +1,6 @@
 $(document).ready(function(){
     //dont think this is working...
-   
+/*
     if(tbCookieExists()) {
         var dc= document.cookie;
         var temp= dc.split("=");
@@ -46,6 +46,8 @@ $(document).ready(function(){
         }
         
     }
+    
+    */
    
     //
     
@@ -148,7 +150,7 @@ $(document).ready(function(){
   } 
   */
     
- 
+ /*
     function tbCookieExists() {
         var dc= document.cookie;
         console.log(dc);
