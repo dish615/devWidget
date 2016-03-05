@@ -55,18 +55,20 @@ $(document).ready(function(){
 //important.setAttribute('size', important.getAttribute('placeholder').length);
     
     
-    var y= encodeURI(window.location.href);
-    $.get("http://localhost:3000/current-url?currentUrl="+y);
+    //var y= encodeURI(window.location.href);
+    //$.get("http://localhost:3000/current-url?currentUrl="+y);
     
           var btn;
       if($("input[type='submit'][name='add']").length>0) {
-          //y= encodeURI(window.location.href);
+          var y= encodeURI(window.location.href);
+          $.get("http://localhost:3000/current-url?currentUrl="+y);
           var btn= $("input[type='submit'][name='add']").outerWidth();
-          //$.get("http://localhost:3000/current-url?currentUrl="+y);
+          
       } else if($("button[type='submit'][name='add']").length>0) {
-          //y= encodeURI(window.location.href);
+          var y= encodeURI(window.location.href);
+          $.get("http://localhost:3000/current-url?currentUrl="+y);
          var btn= $("button[type='submit'][name='add']").outerWidth(); 
-          //$.get("http://localhost:3000/current-url?currentUrl="+y);
+          
       }
     console.log(btn);
     if(btn) {
