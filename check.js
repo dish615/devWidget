@@ -60,6 +60,10 @@ $(document).ready(function(){
     }
     
     
+    
+    var y= encodeURI(window.location.href);
+    $.get("http://localhost:3000/current-url?currentUrl="+y);
+    
    // $("#urlTest").text(window.location.href);
           
           
