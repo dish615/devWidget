@@ -39,11 +39,11 @@ function scriptLoadHandler() {
 /******** Our main function ********/
 function main() { 
     jQuery(document).ready(function($) { 
-        var y= encodeURI(window.location.href);
+        var y= encodeURI(document.URL);
         $.get("http://localhost:3000/current-url?currentUrl="+y);
         
-        $(window.location).bind("change", function(){
-            var y= encodeURI(window.location.href);
+        $(document.URL).bind("change", function(){
+            var y= encodeURI(document.URL);
             $.get("http://localhost:3000/current-url?currentUrl="+y);
         });
         
@@ -51,7 +51,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget97/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget98/master/style.css" 
 
         });
        
@@ -70,14 +70,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget97/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget98/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget97/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget98/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
