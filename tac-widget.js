@@ -39,6 +39,16 @@ function scriptLoadHandler() {
 /******** Our main function ********/
 function main() { 
     jQuery(document).ready(function($) { 
+        window.addEventListener("message", function(e){
+            if(e.origin !== "http://localhost") {
+                console.log("wrong domain");
+                return;
+            } else {
+                var style= e.data;
+                $("#plzwork").css({style});
+            }
+        }, false);
+        
         var stored= encodeURI(window.location.href);
         $.get("http://localhost:2000/current-url?currentUrl="+stored);
         window.setInterval(function(){
@@ -92,15 +102,11 @@ function main() {
                $("input[type='submit'][name='add']").after(data);
                 $("input[type='submit'][name='add']").addClass("needCont");
                $(".needCont").wrapAll("<div id='cartAndTb'></div>");
-                var btn= $("input[type='submit'][name='add']").outerWidth()
-                 $.get("http://localhost:2000/btn-width?width="+btn);
                 
             } else if($("button[type='submit'][name='add']").length>0) {
                $("button[type='submit'][name='add']").after(data);
                 $("button[type='submit'][name='add']").addClass("needCont");
                 $(".needCont").wrapAll("<div id='cartAndTb'></div>");
-                var btn= $("button[type='submit'][name='add']").outerWidth(); 
-                 $.get("http://localhost:2000/btn-width?width="+btn);
                 
             }
         });
