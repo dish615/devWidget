@@ -40,13 +40,10 @@ function scriptLoadHandler() {
 function main() { 
     jQuery(document).ready(function($) { 
         window.addEventListener("message", function(e){
-            if(e.origin !== "http://localhost") {
-                console.log("wrong domain");
-                return;
-            } else {
+                console.log(e.origin);
                 var style= e.data;
                 $("#plzwork").css({style});
-            }
+           
         }, false);
         
         var stored= encodeURI(window.location.href);
@@ -64,7 +61,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget105/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget106/master/style.css" 
 
         });
        
@@ -83,14 +80,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget105/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget106/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget105/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget106/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
