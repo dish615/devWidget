@@ -70,6 +70,8 @@ $(document).ready(function(){
           
       }
     console.log(btn);
+    $.get("http://localhost:2000/btn-width?width="+btn);
+    
     if(btn) {
       $("#cartAndTb").width(btn+377);  
     } else {
