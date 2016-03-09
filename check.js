@@ -78,6 +78,39 @@ $(document).ready(function(){
         $("#cartAndTb").width(377+377);  
     }
     
+        window.addEventListener("message", function(e){
+                console.log(e.origin);
+                console.log(e.data);
+            if(e.origin!=="http://localhost:2000") {
+                return;
+            } else {
+                var position= e.data;
+                console.log(position);
+                if (position==="right") {
+                    $("#plzwork").css({"display": "inline",
+                                       "border": "none",
+                                       "vertical-align": "bottom",
+                                       "height": "52px",
+                                       "margin-left": "-5px",
+                                      "margin-bottom": "auto"});
+                } else if(position==="bottom"){
+                    
+                    
+                    
+                    
+                    $("#plzwork").css({"display": "block",
+                                       "border": "none",
+                                       "vertical-align": "bottom",
+                                       "margin-bottom":"-100px",
+                                       "height": "100px",
+                                       "width": "247px",
+                                       "margin-left": "-"+((btn+228)/2)+"px"});
+                }
+            }
+           
+           
+        }, false);
+    
     
     
    // $("#urlTest").text(window.location.href);

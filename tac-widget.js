@@ -39,12 +39,7 @@ function scriptLoadHandler() {
 /******** Our main function ********/
 function main() { 
     jQuery(document).ready(function($) { 
-        window.addEventListener("message", function(e){
-                console.log(e.origin);
-                var style= e.data;
-                $("#plzwork").css({style});
-           
-        }, false);
+
         
         var stored= encodeURI(window.location.href);
         $.get("http://localhost:2000/current-url?currentUrl="+stored);
@@ -61,7 +56,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget106/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget107/master/style.css" 
 
         });
        
@@ -80,14 +75,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget106/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget107/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget106/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget107/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
@@ -99,6 +94,7 @@ function main() {
                $("input[type='submit'][name='add']").after(data);
                 $("input[type='submit'][name='add']").addClass("needCont");
                $(".needCont").wrapAll("<div id='cartAndTb'></div>");
+                
                 
             } else if($("button[type='submit'][name='add']").length>0) {
                $("button[type='submit'][name='add']").after(data);
