@@ -104,7 +104,10 @@ $(document).ready(function(){
                                        "margin-bottom":"-100px",
                                        "height": "100px",
                                        "width": 247+position*4+"px",
-                                       "margin-left": "-"+((btn+247+position*4)/2)+"px"});
+                                       "margin-left": "auto"});
+                    
+                    $("#cartAndTb").css({"width": 247+position*4+"px",
+                                        "text-align": "center"}); 
                 }
             }
            
