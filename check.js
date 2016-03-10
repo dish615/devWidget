@@ -93,8 +93,8 @@ $(document).ready(function(){
                                        "height": "52px",
                                        "margin-left": "-5px",
                                       "margin-bottom": "auto"});
-                } else if(position==="bottom"){
-                    
+                } else {
+                    position= parseInt(position);
                     
                     
                     
@@ -103,8 +103,8 @@ $(document).ready(function(){
                                        "vertical-align": "bottom",
                                        "margin-bottom":"-100px",
                                        "height": "100px",
-                                       "width": "247px",
-                                       "margin-left": "-"+((btn+247)/2)+"px"});
+                                       "width": 247+position+"px",
+                                       "margin-left": "-"+((btn+247+position)/2)+"px"});
                 }
             }
            
