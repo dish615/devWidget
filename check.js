@@ -104,7 +104,7 @@ $(document).ready(function(){
                                        "margin-bottom":"-100px",
                                        "height": "100px",
                                        "width": "247px",
-                                       "margin-left": "-"+((btn+228)/2)+"px"});
+                                       "margin-left": "-"+((btn+247)/2)+"px"});
                 }
             }
            
