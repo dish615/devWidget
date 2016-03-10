@@ -95,19 +95,35 @@ $(document).ready(function(){
                                       "margin-bottom": "auto"});
                 } else {
                     position= parseInt(position);
+                    var width=247+position*4;
                     
-                    
+                    if(width>btn) {
                     
                     $("#plzwork").css({"display": "block",
                                        "border": "none",
                                        "vertical-align": "bottom",
                                        "margin-bottom":"-100px",
                                        "height": "100px",
-                                       "width": 247+position*4+"px",
+                                       "width": width+"px",
                                        "margin-left": "auto"});
                     
-                    $("#cartAndTb").css({"width": 247+position*4+"px",
-                                        "text-align": "center"}); 
+                    $("#cartAndTb").css({"width": width+"px",
+                                        "text-align": "center",
+                                        "margin-left": "-"+((width-btn)/2)+"px"}); 
+                     } else {
+                            $("#plzwork").css({"display": "block",
+                                       "border": "none",
+                                       "vertical-align": "bottom",
+                                       "margin-bottom":"-100px",
+                                       "height": "100px",
+                                       "width": btn+"px",
+                                       "margin-left": "auto"});
+                    
+                            $("#cartAndTb").css({"width": btn+"px",
+                                                "text-align": "center",
+                                                });
+                            
+                        }
                 }
             }
            
