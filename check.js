@@ -103,8 +103,8 @@ $(document).ready(function(){
                                        "vertical-align": "bottom",
                                        "margin-bottom":"-100px",
                                        "height": "100px",
-                                       "width": 247+position+"px",
-                                       "margin-left": "-"+((btn+247+position)/2)+"px"});
+                                       "width": 247+position*4+"px",
+                                       "margin-left": "-"+((btn+247+position*4)/2)+"px"});
                 }
             }
            
