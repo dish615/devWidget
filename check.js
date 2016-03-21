@@ -74,8 +74,10 @@ $(document).ready(function(){
     
     if(btn) {
       $("#cartAndTb").width(btn+377);  
+       
     } else {
-        $("#cartAndTb").width(377+377);  
+        $("#cartAndTb").width(377+377);
+        
     }
     
         window.addEventListener("message", function(e){
@@ -89,10 +91,11 @@ $(document).ready(function(){
                 if (position==="right") {
                     $("#plzwork").css({"display": "inline",
                                        "border": "none",
-                                       "vertical-align": "bottom",
-                                       "height": "52px",
+                                       "vertical-align": "middle",
+                                       "height": "70px",
                                        "margin-left": "-5px",
-                                      "margin-bottom": "auto"});
+                                      "margin-bottom": "auto",
+                                      "width": "360px"});
                 } else {
                     position= parseInt(position);
                     var width=247+position*4;
