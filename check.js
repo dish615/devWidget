@@ -70,7 +70,7 @@ $(document).ready(function(){
           
       }
     console.log(btn);
-   
+   $(".tb-width-important").css("width", btn+" !important;");
     
     if(btn) {
       $("#cartAndTb").width(btn+377);  

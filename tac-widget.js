@@ -56,7 +56,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget113/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget114/master/style.css" 
 
         });
        
@@ -75,14 +75,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget113/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget114/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget113/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget114/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
@@ -93,12 +93,14 @@ function main() {
             if($("input[type='submit'][name='add']").length>0) {
                $("input[type='submit'][name='add']").after(data);
                 $("input[type='submit'][name='add']").addClass("needCont");
+                $("input[type='submit'][name='add']").addClass("tb-width-important");
                $(".needCont").wrapAll("<div id='cartAndTb'></div>");
                 
                 
             } else if($("button[type='submit'][name='add']").length>0) {
                $("button[type='submit'][name='add']").after(data);
                 $("button[type='submit'][name='add']").addClass("needCont");
+                $("button[type='submit'][name='add']").addClass("tb-width-important");
                 $(".needCont").wrapAll("<div id='cartAndTb'></div>");
                 
             }
