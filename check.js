@@ -61,22 +61,26 @@ $(document).ready(function(){
           var btn;
       if($("input[type='submit'][name='add']").length>0) {
           
-          var btn= $("input[type='submit'][name='add']").outerWidth();
+          btn= $("input[type='submit'][name='add']").outerWidth();
+          $("input[type='submit'][name='add']").css("width", btn+"px");
           
       } else if($("button[type='submit'][name='add']").length>0) {
           //var y= encodeURI(window.location.href);
           //$.get("http://localhost:3000/current-url?currentUrl="+y);
-         var btn= $("button[type='submit'][name='add']").outerWidth(); 
+         btn= $("button[type='submit'][name='add']").outerWidth(); 
+          $("button[type='submit'][name='add']").css("width", btn+"px");
           
       }
     console.log(btn);
-   $(".tb-width-important").css("width", btn+"px !important;");
+   
     
     if(btn) {
       $("#cartAndTb").width(btn+377);  
+        console.log(btn);
        
     } else {
         $("#cartAndTb").width(377+377);
+        console.log(btn);
         
     }
     
