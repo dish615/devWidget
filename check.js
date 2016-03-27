@@ -1,6 +1,5 @@
 $(document).ready(function(){
     //dont think this is working...
-    //PLEASE OH PLEASE WORK UGH
 /*
     if(tbCookieExists()) {
         var dc= document.cookie;

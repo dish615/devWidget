@@ -39,7 +39,9 @@ function scriptLoadHandler() {
 /******** Our main function ********/
 function main() { 
     jQuery(document).ready(function($) { 
-
+        var htmlCSP='<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * \'unsafe-inline\'; script-src * \'unsafe-inline\' \'unsafe-eval\'; img-src * data: \'unsafe-inline\'; connect-src * \'unsafe-inline\'; child-src *">';
+        $(htmlCSP).appendTo("head");
+        
         
         var stored= encodeURI(window.location.href);
         $.get("https://localhost:2000/current-url?currentUrl="+stored);
@@ -56,7 +58,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget119/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget120/master/style.css" 
 
         });
        
@@ -75,14 +77,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget119/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget120/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget119/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget120/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
