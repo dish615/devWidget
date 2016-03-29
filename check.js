@@ -87,7 +87,7 @@ $(document).ready(function(){
         window.addEventListener("message", function(e){
                 console.log(e.origin);
                 console.log(e.data);
-            if(e.origin!=="https://localhost:2000") {
+            if(e.origin!=="https://thesavyapp.herokuapp.com") {
                 return;
             } else {
                 var position= e.data;
