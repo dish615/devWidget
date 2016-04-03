@@ -39,16 +39,23 @@ function scriptLoadHandler() {
 /******** Our main function ********/
 function main() { 
     jQuery(document).ready(function($) { 
+        
+        /*
         var htmlCSP='<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * \'unsafe-inline\'; script-src * \'unsafe-inline\' \'unsafe-eval\'; img-src * data: \'unsafe-inline\'; connect-src * \'unsafe-inline\'; child-src *; frame-src *">';
         $(htmlCSP).appendTo("head");
+        var htmlXf= '<frame-options policy=ALLOW-FROM "https://thesavyapp.herokuapp.com"/>'
+        $(htmlXf).appendTo("head");
         
         
+        var req = new XMLHttpRequest();
+        req.setRequestHeader("X-Frame-Options", "");
+        */
         var stored= encodeURI(window.location.href);
-        $.get("https://thesavyapp.herokuapp.com/current-url?currentUrl="+stored);
+        $.get("https://staysavy.com/current-url?currentUrl="+stored);
         window.setInterval(function(){
           if(window.location.href !== stored) {
               stored= window.location.href;
-              $.get("https://thesavyapp.herokuapp.com/current-url?currentUrl="+stored);
+              $.get("https://staysavy.com/current-url?currentUrl="+stored);
           }
 
         }, 50)
@@ -58,7 +65,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget121/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget122/master/style.css" 
 
         });
        
@@ -77,14 +84,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget121/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget122/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget121/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget122/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
