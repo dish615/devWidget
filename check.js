@@ -94,6 +94,7 @@ $(document).ready(function(){
             } else {
                 var position= e.data;
                 console.log(position);
+                width= width+5; //for question mark
                 if (position==="right") {
                     $("#plzwork").css({"display": "inline",
                                        "border": "none",
