@@ -1,5 +1,6 @@
 $(document).ready(function(){
     //dont think this is working...
+    var web= "http://dev.staysavy.com";
 /*
     if(tbCookieExists()) {
         var dc= document.cookie;
@@ -89,7 +90,7 @@ $(document).ready(function(){
         window.addEventListener("message", function(e){
                 console.log(e.origin);
                 console.log(e.data);
-            if(e.origin!=="https://staysavy.com") {
+            if(e.origin!==web) {
                 return;
             } else {
                 var position= e.data;
