@@ -75,6 +75,8 @@ $(document).ready(function(){
           
       }
     console.log(btn);
+    
+    $.get(web+"/cartButton?width="+btn);
    
     
     if(btn) {
