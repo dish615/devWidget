@@ -69,7 +69,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget125/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget126/master/style.css" 
 
         });
        
@@ -88,14 +88,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget125/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget126/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget125/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget126/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
@@ -104,7 +104,7 @@ function main() {
                 //needCont
            
             if($("input[type='submit'][name='add']").length>0) {
-                var cartVerif= $("input[type='submit'][name='add']").text();
+                var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
                 console.log(cartVerif);
                 if(cartVerif.indexOf("cart")>0) {
    
@@ -115,7 +115,7 @@ function main() {
                  }
                 
             } else if($("button[type='submit'][name='add']").length>0) {
-                var cartVerif= $("button[type='submit'][name='add']").text();
+                var cartVerif= $("button[type='submit'][name='add']").text().toLowerCase();
                 console.log(cartVerif);
                 if(cartVerif.indexOf("cart")>0) {
                    $("button[type='submit'][name='add']").after(data);
