@@ -133,8 +133,7 @@ $(document).ready(function(){
                                        "margin-left": "auto"});
                     
                             $("#cartAndTb").css({"width": btn+"px",
-                                                "text-align": "center",
-                                                });
+                                                "text-align": "center"});
                             
                         }
                 }

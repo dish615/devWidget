@@ -50,7 +50,11 @@ function main() {
         var req = new XMLHttpRequest();
         req.setRequestHeader("X-Frame-Options", "");
         */
+        var onProd= false;
         var stored= encodeURI(window.location.href);
+        if(stored.indexOf("product")>0) {
+            onProd=true;
+        }
         $.get(web+"/current-url?currentUrl="+stored);
         window.setInterval(function(){
           if(window.location.href !== stored) {
@@ -61,11 +65,11 @@ function main() {
         }, 50)
 
         
-        
+        if(onProd) {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget124/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget125/master/style.css" 
 
         });
        
@@ -84,14 +88,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget124/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget125/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget124/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget125/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
@@ -100,20 +104,31 @@ function main() {
                 //needCont
            
             if($("input[type='submit'][name='add']").length>0) {
-               $("input[type='submit'][name='add']").after(data);
-                $("input[type='submit'][name='add']").addClass("needCont");
-                $("input[type='submit'][name='add']").addClass("tb-width-important");
-               $(".needCont").wrapAll("<div id='cartAndTb'></div>");
-                
+                var cartVerif= $("input[type='submit'][name='add']").text();
+                console.log(cartVerif);
+                if(cartVerif.indexOf("cart")>0) {
+   
+                   $("input[type='submit'][name='add']").after(data);
+                    $("input[type='submit'][name='add']").addClass("needCont");
+                    $("input[type='submit'][name='add']").addClass("tb-width-important");
+                   $(".needCont").wrapAll("<div id='cartAndTb'></div>");
+                 }
                 
             } else if($("button[type='submit'][name='add']").length>0) {
-               $("button[type='submit'][name='add']").after(data);
-                $("button[type='submit'][name='add']").addClass("needCont");
-                $("button[type='submit'][name='add']").addClass("tb-width-important");
-                $(".needCont").wrapAll("<div id='cartAndTb'></div>");
+                var cartVerif= $("button[type='submit'][name='add']").text();
+                console.log(cartVerif);
+                if(cartVerif.indexOf("cart")>0) {
+                   $("button[type='submit'][name='add']").after(data);
+                    $("button[type='submit'][name='add']").addClass("needCont");
+                    $("button[type='submit'][name='add']").addClass("tb-width-important");
+                    $(".needCont").wrapAll("<div id='cartAndTb'></div>");
+                }
                 
             }
         });
+        
+        
+    }
 
         
     });
