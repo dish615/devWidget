@@ -61,17 +61,24 @@ $(document).ready(function(){
     
           var btn;
       if($("input[type='submit'][name='add']").length>0) {
-          
+          var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
+            console.log(cartVerif);
+            if(cartVerif.indexOf("cart")>0) {
           btn= $("input[type='submit'][name='add']").outerWidth();
           $("input[type='submit'][name='add']").css({"width": btn+"px",
                                                     "display": "inline-block"});
+                }
           
       } else if($("button[type='submit'][name='add']").length>0) {
           //var y= encodeURI(window.location.href);
           //$.get("http://localhost:3000/current-url?currentUrl="+y);
+          var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
+        console.log(cartVerif);
+        if(cartVerif.indexOf("cart")>0) {
          btn= $("button[type='submit'][name='add']").outerWidth(); 
           $("button[type='submit'][name='add']").css({"width": btn+"px",
                                                     "display": "inline-block"});
+        }
           
       }
     console.log(btn);
