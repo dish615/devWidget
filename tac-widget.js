@@ -69,7 +69,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/devWidget4/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/devWidget5/master/style.css" 
 
         });
        
@@ -88,14 +88,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/devWidget4/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/devWidget5/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/devWidget4/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/devWidget5/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
@@ -104,25 +104,25 @@ function main() {
                 //needCont
            
             if($("input[type='submit'][name='add']").length>0) {
-                var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
-                console.log(cartVerif);
-                if(cartVerif.indexOf("cart")>0) {
+               // var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
+                //console.log(cartVerif);
+                //if(cartVerif.indexOf("cart")>0) {
    
-                   $("input[type='submit'][name='add']").after(data);
-                    $("input[type='submit'][name='add']").addClass("needCont");
-                    $("input[type='submit'][name='add']").addClass("tb-width-important");
+                   $("input[type='submit'][name='add']").first().after(data);
+                    $("input[type='submit'][name='add']").first().addClass("needCont");
+                    $("input[type='submit'][name='add']").first().addClass("tb-width-important");
                    $(".needCont").wrapAll("<div id='cartAndTb'></div>");
-                 }
+               //  }
                 
             } else if($("button[type='submit'][name='add']").length>0) {
-                var cartVerif= $("button[type='submit'][name='add']").text().toLowerCase();
-                console.log(cartVerif);
-                if(cartVerif.indexOf("cart")>0) {
-                   $("button[type='submit'][name='add']").after(data);
-                    $("button[type='submit'][name='add']").addClass("needCont");
-                    $("button[type='submit'][name='add']").addClass("tb-width-important");
+               // var cartVerif= $("button[type='submit'][name='add']").text().toLowerCase();
+               // console.log(cartVerif);
+               // if(cartVerif.indexOf("cart")>0) {
+                   $("button[type='submit'][name='add']").first().after(data);
+                    $("button[type='submit'][name='add']").first().addClass("needCont");
+                    $("button[type='submit'][name='add']").first().addClass("tb-width-important");
                     $(".needCont").wrapAll("<div id='cartAndTb'></div>");
-                }
+               // }
                 
             }
         });
