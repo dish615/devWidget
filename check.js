@@ -72,7 +72,7 @@ $(document).ready(function(){
       } else if($("button[type='submit'][name='add']").length>0) {
           //var y= encodeURI(window.location.href);
           //$.get("http://localhost:3000/current-url?currentUrl="+y);
-          var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
+          var cartVerif= $("button[type='submit'][name='add']").text().toLowerCase();
         console.log(cartVerif);
         if(cartVerif.indexOf("cart")>0) {
          btn= $("button[type='submit'][name='add']").outerWidth(); 
