@@ -40,6 +40,7 @@ function scriptLoadHandler() {
 function main() { 
     jQuery(document).ready(function($) { 
         var web= "https://staging-thesavyapp.herokuapp.com";
+        var btn;
         /*
         var htmlCSP='<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * \'unsafe-inline\'; script-src * \'unsafe-inline\' \'unsafe-eval\'; img-src * data: \'unsafe-inline\'; connect-src * \'unsafe-inline\'; child-src *; frame-src *">';
         $(htmlCSP).appendTo("head");
@@ -61,7 +62,11 @@ function main() {
               stored= window.location.href;
               $.get(web+"/current-url?currentUrl="+encodeURI(stored));
               if(stored.indexOf("product")>0) {
-                  document.getElementById("plzwork").contentWindow.postMessage(stored, web);
+                  var data= {
+                      url: stored,
+                      btnWidth: btn
+                  }
+                  document.getElementById("plzwork").contentWindow.postMessage(data, web);
               }
               
           }
@@ -73,7 +78,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/devWidget16/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/devWidget17/master/style.css" 
 
         });
        
@@ -92,14 +97,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/devWidget16/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/devWidget17/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/devWidget16/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/devWidget17/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
@@ -116,6 +121,7 @@ function main() {
                     $("input[type='submit'][name='add']").first().addClass("needCont");
                     $("input[type='submit'][name='add']").first().addClass("tb-width-important");
                    $(".needCont").wrapAll("<div id='cartAndTb'></div>");
+                    btn= $("input[type='submit'][name='add']").first().outerWidth();
                //  }
                 
             } else if($("button[type='submit'][name='add']").length>0) {
@@ -126,13 +132,19 @@ function main() {
                     $("button[type='submit'][name='add']").first().addClass("needCont");
                     $("button[type='submit'][name='add']").first().addClass("tb-width-important");
                     $(".needCont").wrapAll("<div id='cartAndTb'></div>");
+                    btn= $("button[type='submit'][name='add']").first().outerWidth();
                // }
                 
             }
             
            // console.log($("#plzwork"));
+            var data= {
+                url: stored,
+                btnWidth: btn
+            }
+            
             document.getElementById("plzwork").onload = function() {
-             document.getElementById("plzwork").contentWindow.postMessage(stored, web);  
+             document.getElementById("plzwork").contentWindow.postMessage(data, web);  
             };
             
         });

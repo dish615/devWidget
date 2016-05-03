@@ -83,12 +83,15 @@ $(document).ready(function(){
       }
     console.log(btn);
     
-    $.get(web+"/cartButton?width="+btn);
-   
+    //$.get(web+"/cartButton?width="+btn); REVERT TO THIS 622ae3df385a7cd5b1755e9715c95db5617d3ad7
+  
     
     if(btn) {
       $("#cartAndTb").width(btn+377);  
         console.log(btn);
+        document.getElementById("plzwork").onload = function() {
+             document.getElementById("plzwork").contentWindow.postMessage(btn, web);  
+        };
        
     } else {
         $("#cartAndTb").width(377+377);
