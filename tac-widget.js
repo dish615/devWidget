@@ -50,23 +50,23 @@ function main() {
         var req = new XMLHttpRequest();
         req.setRequestHeader("X-Frame-Options", "");
         */
-        var onProd= false;
+        
         var stored= encodeURI(window.location.href);
-        if(stored.indexOf("product")>0) {
-            onProd=true;
-        }
+       
     
         $.get(web+"/current-url?currentUrl="+stored);
+        top.postMessage(stored, web+"/cookie-inst");
         window.setInterval(function(){
           if(window.location.href !== stored) {
               stored= window.location.href;
               $.get(web+"/current-url?currentUrl="+stored);
+              top.postMessage(stored, web+"/cookie-inst");
           }
 
         }, 50)
 
         
-        if(onProd) {
+        if(stored.indexOf("product")>0) {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
