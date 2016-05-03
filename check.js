@@ -89,9 +89,6 @@ $(document).ready(function(){
     if(btn) {
       $("#cartAndTb").width(btn+377);  
         console.log(btn);
-        document.getElementById("plzwork").onload = function() {
-             document.getElementById("plzwork").contentWindow.postMessage(btn, web);  
-        };
        
     } else {
         $("#cartAndTb").width(377+377);
