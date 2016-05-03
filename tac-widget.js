@@ -143,6 +143,8 @@ function main() {
                 btnWidth: btn
             }
             
+            console.log(content);
+            
             document.getElementById("plzwork").onload = function() {
              document.getElementById("plzwork").contentWindow.postMessage(content, web);  
             };
