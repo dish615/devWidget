@@ -73,7 +73,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/devWidget12/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/devWidget13/master/style.css" 
 
         });
        
@@ -92,14 +92,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/devWidget12/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/devWidget13/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/devWidget12/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/devWidget13/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
@@ -130,8 +130,8 @@ function main() {
                 
             }
             
-            console.log($("#plzwork"));
-            $("#plzwork").postMessage(stored, web);  
+           // console.log($("#plzwork"));
+            document.getElementById("plzwork").postMessage(stored, web);  
             
             
         });
