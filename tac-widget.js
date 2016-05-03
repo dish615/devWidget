@@ -51,16 +51,16 @@ function main() {
         req.setRequestHeader("X-Frame-Options", "");
         */
         
-        var stored= encodeURI(window.location.href);
+        var stored= window.location.href;
        
     
-        $.get(web+"/current-url?currentUrl="+stored);
-        top.postMessage(stored, web+"/cookie-inst");
+        $.get(web+"/current-url?currentUrl="+encodeURI(stored));
+        window.postMessage(stored, web);
         window.setInterval(function(){
           if(window.location.href !== stored) {
               stored= window.location.href;
-              $.get(web+"/current-url?currentUrl="+stored);
-              top.postMessage(stored, web+"/cookie-inst");
+              $.get(web+"/current-url?currentUrl="+encodeURI(stored));
+              window.postMessage(stored, web);
           }
 
         }, 50)
@@ -70,7 +70,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/devWidget7/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/devWidget9/master/style.css" 
 
         });
        
@@ -89,14 +89,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/devWidget7/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/devWidget9/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/devWidget7/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/devWidget9/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
