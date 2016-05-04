@@ -148,7 +148,7 @@ $(document).ready(function(){
            
            
         }, false);
-    if(window.location.href.indexOf("culturemart")>0) {
+    if(window.location.href.indexOf("sculpturemart")>0) {
         $("#plzwork").css("height", "53.5px");
     }
     
