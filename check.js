@@ -144,11 +144,10 @@ $(document).ready(function(){
                             
                         }
                 }
-                 if(window.location.href.indexOf("sculpturemart")>0) {
-                     $("#plzwork").css("height", "53.5px");
-                 }
+                
+               
             }
-           
+            
            
         }, false);
    
