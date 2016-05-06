@@ -82,7 +82,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget133/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget134/master/style.css" 
 
         });
        
@@ -101,20 +101,26 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget133/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget134/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget133/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget134/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
             //might need to add a container surrounding add to cart button and tb widget to set width  $("input[type='submit'][name='add']").before("<div id='cartAndTb'>");
           
                 //needCont
+            if($(".satcb_btn button").length>0) {
+                $(".satcb_btn button").attr("name", "notAdd");
+                
+            } else if($(".satcb_btn input").length>0) {
+                $(".satcb_btn input").attr("name", "notAdd");
+            }
            
             if($("input[type='submit'][name='add']").length>0) {
                // var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
