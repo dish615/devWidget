@@ -64,6 +64,7 @@ $(document).ready(function(){
          // var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
            // console.log(cartVerif);
            // if(cartVerif.indexOf("cart")>0) {
+          
           btn= $("input[type='submit'][name='add']").first().outerWidth();
           $("input[type='submit'][name='add']").first().css({"width": btn+"px",
                                                     "display": "inline-block"});
@@ -75,6 +76,7 @@ $(document).ready(function(){
           //var cartVerif= $("button[type='submit'][name='add']").text().toLowerCase();
        // console.log(cartVerif);
       //  if(cartVerif.indexOf("cart")>0) {
+          
          btn= $("button[type='submit'][name='add']").first().outerWidth(); 
           $("button[type='submit'][name='add']").first().css({"width": btn+"px",
                                                     "display": "inline-block"});
@@ -92,9 +94,18 @@ $(document).ready(function(){
        
     } else {
         $("#cartAndTb").width(377+377);
-        console.log(btn);
+        
         
     }
+    
+    
+    if($(".satcb_btn button").length>0) {
+        $(".satcb_btn button").css("width", "121px");
+
+    } else if($(".satcb_btn input").length>0) {
+        $(".satcb_btn input").css("width", "121px");
+    }
+    
     
         window.addEventListener("message", function(e){
                 console.log(e.origin);
