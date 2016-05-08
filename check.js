@@ -161,8 +161,8 @@ $(document).ready(function(){
                                                 "text-align": "center"});
                             
                         }
-                    if($('div.purchase.clearfix.inline_purchase').length>0 && window.location.href.indexOf("newmoonenterprise")<0) {
-                        console.log("ugh clearfix");
+                    if(window.location.href.indexOf("newmoonenterprise")<0) {
+                        console.log("ugh bottom");
                         $("#cartAndTb").css("margin-bottom", "50px");
                     }
                 }
