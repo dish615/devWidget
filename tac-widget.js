@@ -39,7 +39,7 @@ function scriptLoadHandler() {
 /******** Our main function ********/
 function main() { 
     jQuery(document).ready(function($) { 
-        var web= "https://staging-thesavyapp.herokuapp.com";
+        var web= "https://staysavy.com";
         var btn;
         /*
         var htmlCSP='<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * \'unsafe-inline\'; script-src * \'unsafe-inline\' \'unsafe-eval\'; img-src * data: \'unsafe-inline\'; connect-src * \'unsafe-inline\'; child-src *; frame-src *">';
