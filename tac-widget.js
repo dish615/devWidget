@@ -82,7 +82,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget135/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget136/master/style.css" 
 
         });
        
@@ -101,14 +101,14 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget135/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget136/master/check.js"
         });
         
         widg_script.prependTo("head");
         
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget135/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget136/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
@@ -139,6 +139,13 @@ function main() {
                     $(".needCont").wrapAll("<div id='cartAndTb'></div>");
                     btn= $("button[type='submit'][name='add']").first().outerWidth();
                // }
+                
+            } else if($("script:contains('\"name\":\"Canopy\"')").length>0) {
+                $("button[name='add']").first().after(data);
+                $("button[name='add']").first().addClass("needCont");
+                $("button[name='add']").first().addClass("tb-width-important");
+                $(".needCont").wrapAll("<div id='cartAndTb'></div>");
+                btn= $("button[name='add']").first().outerWidth();
                 
             }
             

@@ -88,6 +88,12 @@ $(document).ready(function(){
           
         //}
           
+      } else if($("script:contains('\"name\":\"Canopy\"')").length>0) {
+               
+          btn= $("button[name='add']").first().outerWidth();
+           $("button[name='add']").first().css({"width": btn+"px",
+                                                    "display": "inline-block"});
+                
       }
     console.log(btn);
     
