@@ -66,7 +66,7 @@ $(document).ready(function(){
            // if(cartVerif.indexOf("cart")>0) {
           
           btn= $("input[type='submit'][name='add']").first().outerWidth();
-          if($(".satcb_btn input").length<0) {
+          if($(".satcb_btn input").length<0 || $("div.purchase.clearfix").length<0) {
             $("input[type='submit'][name='add']").first().css({"width": btn+"px",
                                                     "display": "inline-block"});
             }
@@ -81,7 +81,7 @@ $(document).ready(function(){
       //  if(cartVerif.indexOf("cart")>0) {
           
          btn= $("button[type='submit'][name='add']").first().outerWidth();
-          if($(".satcb_btn button").length<0) {
+          if($(".satcb_btn button").length<0 || $("div.purchase.clearfix").length<0) {
                   $("button[type='submit'][name='add']").first().css({"width": btn+"px",
                                                     "display": "inline-block"});
               }
