@@ -1,6 +1,7 @@
 $(document).ready(function(){
     //dont think this is working...
     var web= "https://staging-thesavyapp.herokuapp.com";
+    var socket = io.connect(web);
 /*
     if(tbCookieExists()) {
         var dc= document.cookie;
@@ -60,12 +61,14 @@ $(document).ready(function(){
     //$.get("http://localhost:3000/current-url?currentUrl="+y);
     
           var btn;
+            var btnVar;
       if($("input[type='submit'][name='add']").length>0) {
          // var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
            // console.log(cartVerif);
            // if(cartVerif.indexOf("cart")>0) {
           
           btn= $("input[type='submit'][name='add']").first().outerWidth();
+          btnVar= $("input[type='submit'][name='add']").first();
           if($(".satcb_btn input").length<0 || $("div.purchase.clearfix").length<0) {
             $("input[type='submit'][name='add']").first().css({"width": btn+"px",
                                                     "display": "inline-block"});
@@ -81,6 +84,7 @@ $(document).ready(function(){
       //  if(cartVerif.indexOf("cart")>0) {
           
          btn= $("button[type='submit'][name='add']").first().outerWidth();
+          btnVar= $("button[type='submit'][name='add']").first();
           if($(".satcb_btn button").length<0 || $("div.purchase.clearfix").length<0) {
                   $("button[type='submit'][name='add']").first().css({"width": btn+"px",
                                                     "display": "inline-block"});
@@ -91,6 +95,7 @@ $(document).ready(function(){
       } else if($("script:contains('\"name\":\"Canopy\"')").length>0) {
                
           btn= $("button[name='add']").first().outerWidth();
+          btnVar= $("button[name='add']").first();
            $("button[name='add']").first().css({"width": btn+"px",
                                                     "display": "inline-block"});
                 
@@ -98,6 +103,14 @@ $(document).ready(function(){
     console.log(btn);
     
     //$.get(web+"/cartButton?width="+btn); REVERT TO THIS 622ae3df385a7cd5b1755e9715c95db5617d3ad7
+    
+    btnVar.click(function(){
+        var dat= {
+            page: window.location.href
+        };
+       socket.emit("add-to-cart-clicked", dat);
+        
+    });
   
     
     if(btn) {
