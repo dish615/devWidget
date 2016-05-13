@@ -1,7 +1,7 @@
 $(document).ready(function(){
     //dont think this is working...
     var web= "https://staysavy.com";
-    var socket = io.connect(web);
+    
 /*
     if(tbCookieExists()) {
         var dc= document.cookie;
@@ -105,6 +105,7 @@ $(document).ready(function(){
     //$.get(web+"/cartButton?width="+btn); REVERT TO THIS 622ae3df385a7cd5b1755e9715c95db5617d3ad7
     
     btnVar.click(function(){
+        var socket = io.connect(web);
         var dat= {
             page: window.location.href
         };
