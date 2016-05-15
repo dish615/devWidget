@@ -69,7 +69,7 @@ $(document).ready(function(){
           
           btn= $("input[type='submit'][name='add']").first().outerWidth();
           btnVar= $("input[type='submit'][name='add']").first();
-          if($(".satcb_btn input").length<0 || $("div.purchase.clearfix").length<0) {
+          if($(".satcb_btn input").length<=0 || $("div.purchase.clearfix").length<=0) {
             $("input[type='submit'][name='add']").first().css({"width": btn+"px",
                                                     "display": "inline-block"});
             }
@@ -85,7 +85,7 @@ $(document).ready(function(){
           
          btn= $("button[type='submit'][name='add']").first().outerWidth();
           btnVar= $("button[type='submit'][name='add']").first();
-          if($(".satcb_btn button").length<0 || $("div.purchase.clearfix").length<0) {
+          if($(".satcb_btn button").length<=0 || $("div.purchase.clearfix").length<=0) {
                   $("button[type='submit'][name='add']").first().css({"width": btn+"px",
                                                     "display": "inline-block"});
               }
