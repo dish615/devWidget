@@ -62,7 +62,17 @@ $(document).ready(function(){
     
           var btn;
             var btnVar;
-      if($("input[type='submit'][name='add']").length>0) {
+    if($("script[src*='s3.amazonaws.com/shopify-apps/pre-order/js/jquery.spur.cart.api.js']" && $(".tooltipstered").is(":visible")).length>0) {
+            btn= $(".tooltipstered").first().outerWidth();
+            btnVar= $(".tooltipstered").first();
+            if($(".satcb_btn input").length<=0 || $("div.purchase.clearfix").length<=0) {
+                $(".tooltipstered").first().css({"width": btn+"px",
+                                                        "display": "inline-block"});
+
+            }
+                
+                
+            } else if($("input[type='submit'][name='add']").length>0) {
          // var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
            // console.log(cartVerif);
            // if(cartVerif.indexOf("cart")>0) {

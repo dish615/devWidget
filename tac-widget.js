@@ -90,7 +90,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "https://cdn.rawgit.com/dish615/Widget139/master/style.css" 
+            href: "https://cdn.rawgit.com/dish615/Widget140/master/style.css" 
 
         });
        
@@ -109,7 +109,7 @@ function main() {
        var widg_script = $("<script>", {
            type: "text/javascript",
             async: true,
-            src: "https://cdn.rawgit.com/dish615/Widget139/master/check.js"
+            src: "https://cdn.rawgit.com/dish615/Widget140/master/check.js"
         });
         
         widg_script.appendTo("head");
@@ -117,16 +117,22 @@ function main() {
        
 
         
-        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget139/master/index.html";
+        var jsonp_url= "https://cdn.rawgit.com/dish615/Widget140/master/index.html";
         $.get(jsonp_url, function(data){
             console.log(data);
             console.log(typeof data);
             //might need to add a container surrounding add to cart button and tb widget to set width  $("input[type='submit'][name='add']").before("<div id='cartAndTb'>");
           
                 //needCont
+            //s3.amazonaws.com/shopify-apps/pre-order/js/jquery.spur.cart.api.js
             
-           
-            if($("input[type='submit'][name='add']").length>0) {
+            if($("script[src*='s3.amazonaws.com/shopify-apps/pre-order/js/jquery.spur.cart.api.js']").length>0 && $(".tooltipstered").is(":visible")) {
+                $(".tooltipstered").first().after(data);
+                $(".tooltipstered").first().addClass("needCont");
+                $(".needCont").wrapAll("<div id='cartAndTb'></div>");
+                btn=  $(".tooltipstered").first().outerWidth();
+                
+            } else if($("input[type='submit'][name='add']").length>0) {
                // var cartVerif= $("input[type='submit'][name='add']").text().toLowerCase();
                 //console.log(cartVerif);
                 //if(cartVerif.indexOf("cart")>0) {
