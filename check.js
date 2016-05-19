@@ -1,6 +1,6 @@
 $(document).ready(function(){
     //dont think this is working...
-    var web= "https://staysavy.com";
+    var web= "https://staging-thesavyapp.herokuapp.com";
     
 /*
     if(tbCookieExists()) {
