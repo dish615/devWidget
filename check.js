@@ -160,7 +160,7 @@ $(document).ready(function(){
                 element: this
             };
             
-            console.log(JSON.stringify(clickData);)
+            console.log(JSON.stringify(clickData));
 
             socket.emit('click', clickData);
         });
@@ -171,7 +171,7 @@ $(document).ready(function(){
                 userId: userId || socket.io.engine.id,
                 element: this
             };
-            console.log(JSON.stringify(clickData);
+            console.log(JSON.stringify(clickData));
 
             socket.emit('click', clickData);
         });
@@ -182,7 +182,7 @@ $(document).ready(function(){
                 userId: userId || socket.io.engine.id,
                 element: this
             };
-            console.log(JSON.stringify(clickData);
+            console.log(JSON.stringify(clickData));
 
             socket.emit('click', clickData);
         });
@@ -194,7 +194,7 @@ $(document).ready(function(){
                 element: this
             };
 
-             console.log(JSON.stringify(clickData);
+             console.log(JSON.stringify(clickData));
             socket.emit('click', clickData);
         });
     
