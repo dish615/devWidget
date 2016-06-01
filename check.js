@@ -100,7 +100,21 @@ $(document).ready(function(){
                                        "margin-left": "-5px",
                                       "margin-bottom": "auto",
                                       "width": "360px"});
-                } else if(!isNaN(parseInt(position))) {
+                }  else if(position.indexOf("sessionid")>0) {
+                    //socket.io.engine.id= position;
+                    var ind= position.indexOf("sessionid");
+                    userId= position.substring(0, ind);
+                    var dat= {
+                        userId: userId,
+                        from: position.substring(ind+9)
+                    };
+                    console.log(JSON.stringify(dat));
+                    
+                    socket.emit('store-userid', dat);
+                    console.log("socket id stored in cookie at savy "+position);
+                    
+                } else {
+      
                     position= parseInt(position);
                     var width=247+position*4;
                     
@@ -134,17 +148,9 @@ $(document).ready(function(){
                         console.log("ugh bottom");
                         $("#cartAndTb").css("margin-bottom", "50px");
                     }
-                } else {
-                   var ind= position.indexOf("sessionid");
-                    userId= position.substring(0, ind);
-                    var dat= {
-                        userId: userId,
-                        from: position.substring(ind+9)
-                    };
-                    console.log(JSON.stringify(dat));
                     
-                    socket.emit('store-userid', dat);
-                    console.log("socket id stored in cookie at savy "+position);
+                    
+                    
                 }
                 
                
