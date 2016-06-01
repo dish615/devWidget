@@ -139,7 +139,7 @@ $(document).ready(function(){
                     userId= position.substring(0, ind);
                     var dat= {
                         userId: userId,
-                        from: position.substring(ind+9);
+                        from: position.substring(ind+9)
                     };
                     console.log(JSON.stringify(dat));
                     
