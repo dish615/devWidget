@@ -39,18 +39,9 @@ function scriptLoadHandler() {
 /******** Our main function ********/
 function main() { 
     jQuery(document).ready(function($) { 
-        var web= "https://staging-thesavyapp.herokuapp.com";
+        var web= "https://staysavy.com";
         var btn;
-        /*
-        var htmlCSP='<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * \'unsafe-inline\'; script-src * \'unsafe-inline\' \'unsafe-eval\'; img-src * data: \'unsafe-inline\'; connect-src * \'unsafe-inline\'; child-src *; frame-src *">';
-        $(htmlCSP).appendTo("head");
-        var htmlXf= '<frame-options policy=ALLOW-FROM "https://thesavyapp.herokuapp.com"/>'
-        $(htmlXf).appendTo("head");
-        
-        
-        var req = new XMLHttpRequest();
-        req.setRequestHeader("X-Frame-Options", "");
-        */
+       
         
         var stored= window.location.href;
        
@@ -76,17 +67,7 @@ function main() {
           }
 
         }, 50);
-        /*
-         var sockets_script= $("<script>", {
-            type: "text/javascript",
-            async: true,
-            src: web+"/socket.io/socket.io.js"
-        });
-        
-        */
-       // sockets_script.prependTo("head");
-
-        
+       
         if(stored.indexOf("product")>0) {
             
         $.getScript(web+"/socket.io/socket.io.js", function(){
